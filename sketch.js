@@ -6,6 +6,14 @@ var meteors = [];
 var linenum = 200;
 var meteornum = 20;
 
+function POSTSCORE(score){
+    var data = {'user' : 'PLY','score': score};
+    $.post(URL, data, function(response){
+        if(response === 'success'){ alert('Yay!'); }
+        else{ alert('Error! :('); }
+    });
+}
+
 function preload(){
     meteorimage = loadImage("assets/meteor.gif");
     spacefont = loadFont('assets/space_invaders.ttf');
@@ -67,16 +75,13 @@ function draw(){
     
     textSize(50);
     textFont(spacefont);
-    text(ship.score, 10, 70);
-    
-    
-    
-    
+    text(ship.score, 10, 70);    
     if(ship.health <= 0){
         noLoop();
         theme.stop();
         textSize(windowWidth/10);
         text("Game Over!",width/5, 3*height/5);
+        POSTSCORE(ship.score);
     }
     
     if(universevel <= 150) {
