@@ -1,0 +1,19 @@
+{
+  "name": "yet_another_space_game",
+  "version": "0.9.9",
+  "description": "A dinosaur game for ITS",
+  "main": "sketch.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LearningMonkey61/BasicJSgame.git"
+  },
+  "author": "Swapnil Sahu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LearningMonkey61/BasicJSgame/issues"
+  },
+  "homepage": "https://github.com/LearningMonkey61/BasicJSgame#readme"
+}

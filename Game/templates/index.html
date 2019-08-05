@@ -1,0 +1,45 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="{% static 'js/p5.js' %}"></script>
+    <script src="{% static 'js/p5.dom.js' %}"></script>
+    <script src="{% static 'js/p5.collide2d.js' %}"></script>
+    <script src="{% static 'js/p5.sound.js' %}"></script>
+    <script src="{% static 'js/sketch.js' %}"></script>
+    <script src="{% static 'js/bckgrnd.js' %}"></script>
+    <script src="{% static 'js/ship.js' %}"></script>
+    <script src="{% static 'js/meteor.js' %}"></script>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    {% csrf_token %}
+    <script>
+        var meteor_img = "{% static 'js/assets/meteor.gif' %}";
+        var font = "{% static 'js/assets/space_invaders.ttf' %}";
+        var theme_music = "{% static 'js/assets/theme.mp3' %}";
+        var URL = "{% url 'add' %}";
+        var Redirect_url="{% url 'result' %}";
+    </script>
+
+    <title>STARSHIP!</title>
+</head>
+<body bgcolor="black">
+
+    <div class="top-3" style="visibility: hidden;">
+    {% for ob in result %}
+    <h4>{{ob}}</h4>
+    {% endfor %}
+    </div>
+
+    <div id="top3" style="color: white;position:absolute;top:0;">
+        <h4 id="high1">1</h4>
+        <h4 id="high2">1</h4>
+        <h4 id="high3">1</h4>
+    </div>
+    <div id="your-3" style="color: white;position:absolute;top:0;right:0;">
+        <h4 id="up"></h4>
+        <h4 id="your"></h4>
+        <h4 id="down"></h4>
+    </div>
+</body>
+</html>
