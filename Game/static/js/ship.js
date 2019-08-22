@@ -2,7 +2,7 @@ function Ship(){
     this.x = 200;
     this.y = 200;
     
-    this.health = 1;
+    this.health = 100;
     this.score = 0 ;
 }
 
