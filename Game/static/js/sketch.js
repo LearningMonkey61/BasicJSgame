@@ -101,7 +101,7 @@ function draw(){
         
         if(y>=ship.score)
         {
-            if(i!=0)
+            if (i != scores.length - 1)
             {
                 down.innerHTML=scores[i+1].innerHTML;
             }
