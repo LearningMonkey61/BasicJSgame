@@ -103,7 +103,7 @@ function draw(){
         {
             if(i!=0)
             {
-                down.innerHTML=scores[i+1].innerHTML;
+                down.innerHTML=scores[i-1].innerHTML;
             }
             up.innerHTML = scores[i].innerHTML;
             break;
