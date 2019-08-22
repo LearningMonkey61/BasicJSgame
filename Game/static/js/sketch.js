@@ -36,6 +36,7 @@ function preload(){
     meteorimage = loadImage(meteor_img);
     spacefont = loadFont(font);
     theme =  loadSound(theme_music);
+    game_over = loadSound(game_over);
 }
 
 function setup(){
@@ -117,6 +118,7 @@ function draw(){
     if(ship.health <= 0){
         noLoop();
         theme.stop();
+        game_over.play();
         textSize(windowWidth/10);
         text("Game Over!",width/5, 3*height/5);
         input = createInput();
