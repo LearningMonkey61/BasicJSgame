@@ -2,17 +2,19 @@ function Meteor(){
     this.x = random(width,2*width);
     this.y = random(0,width);
     this.xspeed = universevel;
-    this.radius = random(50,100);
+    this.radius = random(50,80);
 }
 
 Meteor.prototype.show = function(){
     stroke(255);
     strokeWeight(2);
-    image(meteorimage,this.x,this.y,this.radius,this.radius);
+    image(meteorimage,this.x,this.y,this.radius*(1/0.7),this.radius);
+    
 }
 
 Meteor.prototype.move = function(){
     this.x = this.x - this.xspeed;
+    this.y = this.y+random(-4, 4);
 }
 
 Meteor.prototype.explode = function(){
