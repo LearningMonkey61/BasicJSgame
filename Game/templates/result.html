@@ -1,9 +1,17 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html>
 <head>
 	<title></title>
 	<style>
-		body {background-color: rgb(0, 0, 0)}
+		@font-face {
+  			font-family: 'MyWebFont';
+  			src:url("{% static 'js/assets/space_invaders.ttf' %}") format('woff2') ; 
+}
+		body {
+			background-color: rgb(0, 0, 0);
+			font-family: 'MyWebFont', Fallback, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		}
 		#encoder {
 			border-radius: 50px	;
 			background-color: rgba(47, 47, 47, 0.445);

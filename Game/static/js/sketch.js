@@ -40,6 +40,7 @@ function preload(){
     spacefont = loadFont(font);
     theme =  loadSound(theme_music);
     game_over = loadSound(game_over);
+    explode = loadSound(explode);
 }
 
 function setup(){
@@ -75,6 +76,7 @@ function draw(){
         if (collideRectCircle(ship.x,ship.y,100,-40,meteors[i].x,meteors[i].y,2*meteors[i].radius)){
             ship.health = ship.health - meteors[i].radius * 0.05;   
             meteors[i].explode();
+            explode.play();
             meteors.splice(i,1);
             meteors.push(new Meteor());
         }
