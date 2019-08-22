@@ -34,6 +34,8 @@ window.addEventListener('DOMContentLoaded',function() {
 
 function preload(){
     meteorimage = loadImage(meteor_img);
+    shipLoad = loadImage(ship_img);
+    shipCreate=createImg(ship_img);
     spacefont = loadFont(font);
     theme =  loadSound(theme_music);
     game_over = loadSound(game_over);
@@ -42,12 +44,13 @@ function preload(){
 function setup(){
     var bgcanvas = createCanvas(windowWidth,(1/2)*windowHeight);
     bgcanvas.position(0,(2/8)*windowHeight);
-    bgcanvas.style("cursor: none");
-
+    bgcanvas.style("cursor: none;z-index:-1000;");
+    image(shipLoad, 0, (2 / 8) * windowHeight);
     theme.loop();
     theme.play();
 
     ship = new Ship();
+   
     for(var i = 0 ; i < linenum ; i++){
         var l = new zoomline();
         lines.push(l);
@@ -67,9 +70,9 @@ function draw(){
     }
 
     for(var i = 0 ; i < meteors.length ; i++){
-        
-        if(collideCircleCircle(ship.x,ship.y,100,meteors[i].x,meteors[i].y,meteors[i].radius)){
-            ship.health = ship.health - meteors[i].radius * 0.05;
+        //line(ship.x, ship.y, ship.x + 100, ship.y-40);
+        if (collideRectCircle(ship.x,ship.y,100,-40,meteors[i].x,meteors[i].y,2*meteors[i].radius)){
+            ship.health = ship.health - meteors[i].radius * 0.05;   
             meteors[i].explode();
             meteors.splice(i,1);
             meteors.push(new Meteor());

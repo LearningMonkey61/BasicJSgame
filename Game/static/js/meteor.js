@@ -2,7 +2,7 @@ function Meteor(){
     this.x = random(width,2*width);
     this.y = random(0,width);
     this.xspeed = universevel;
-    this.radius = random(50,100);
+    this.radius = random(50,80);
 }
 
 Meteor.prototype.show = function(){
