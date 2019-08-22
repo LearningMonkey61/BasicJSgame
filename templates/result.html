@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		body {background-color: rgb(0, 0, 0)}
+		#encoder {
+			border-radius: 50px	;
+			background-color: rgba(47, 47, 47, 0.445);
+			align-content: center;
+			height: 40px;
+			justify-content: center;
+		}
+		h1   {
+			color: rgb(231, 231, 241);
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	{% for ob in result %}
+		<div id="encoder">
+			<h1>{{ob}}</h1>
+		</div>
+	{% endfor %}
+</body>
+</html>
