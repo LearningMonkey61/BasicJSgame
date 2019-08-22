@@ -1,7 +1,7 @@
 function Ship(){
     this.x = 200;
     this.y = 200;
-    this.health = 100;
+    this.health = 10;
     this.score = 0 ;
 }
 
