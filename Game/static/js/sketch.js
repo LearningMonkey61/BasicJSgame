@@ -34,6 +34,7 @@ window.addEventListener('DOMContentLoaded',function() {
 
 function preload(){
     meteorimage = loadImage(meteor_img);
+    
     shipLoad = loadImage(ship_img);
     shipCreate=createImg(ship_img);
     spacefont = loadFont(font);
