@@ -114,7 +114,7 @@ function draw(){
             break;
         }
     }
-    document.getElementById("your").innerHTML = ship.score;
+    document.getElementById("your").innerHTML = "YOU:"+ship.score;
 
     textSize(50);
     textFont(spacefont);
@@ -125,13 +125,20 @@ function draw(){
         game_over.play();
         textSize(windowWidth/10);
         text("Game Over!",width/5, 3*height/5);
-        input = createInput();
+        input = createInput("");
         input.style('border-radius','50px');
         input.style('');
         input.position(4.1*width/10, (6/5)*height);
-        button = createButton('Submit!');
-        button.position(input.x + input.width,4*height/5);
-        button.mousePressed(greet);
+        button = createButton('Submit Name!');
+        button.style('border-radius', '0px');
+        button.style('background-color', '#EEEEEE');
+        button.style('height', '25px');
+        button.position( input.x+input.width/2-button.width/2, (6.5/5)*height);
+        button.mousePressed(()=>{
+             if (input.value().trim().length >= 3)
+             greet();
+             else alert("Write name of length 3 or more");
+            });
     }
     
     if(universevel <= 150) {
