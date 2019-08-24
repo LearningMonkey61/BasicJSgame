@@ -1,6 +1,6 @@
 // {% load staticfiles %} 
 var universalacc = 10;
-var universevel = 1;
+var universevel = 20;
 var lines = [];
 var ship;
 var meteors = [];
@@ -147,4 +147,3 @@ function draw(){
         universevel = universevel + 0.001 * universalacc; 
     }
 }
-
