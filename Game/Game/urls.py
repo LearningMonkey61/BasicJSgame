@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path,include
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('the_real_Admin_912749/', admin.site.urls),
+    path('admin/',) # we'll try and redirect it to a good site ;p
     path('',include('Results_Page.urls')),
 ]
